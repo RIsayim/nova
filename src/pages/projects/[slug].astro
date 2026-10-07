@@ -1,0 +1,1929 @@
+---
+export function getStaticPaths() {
+  const projects = [
+  {
+    "slug": "canyon-glass-house",
+    "title": "Canyon Glass House",
+    "description": "A calm, connected home where architecture leads and technology quietly brings each room to life. Thoughtful lighting, sound, comfort and control come together around the rhythms of everyday living.",
+    "hero": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "Canyon Glass House, a contemporary home surrounded by its landscape",
+    "overviewTitle": "Technology that feels like it belongs.",
+    "lead": "The brief was to make a beautiful home feel even more natural to live in—without adding visual noise or complexity.",
+    "story": "NOVA brought the home’s essential systems together in one considered plan. Light, sound, shading, network and control are coordinated around the way the household moves through each day.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Whole-home integration"
+      },
+      {
+        "label": "Experience",
+        "value": "Light, comfort & entertainment"
+      },
+      {
+        "label": "Approach",
+        "value": "Designed around everyday life"
+      }
+    ],
+    "images": [
+      {
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A light-filled living space with modern finishes",
+        "caption": "Light, material and proportion in balance"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A relaxed contemporary living room",
+        "caption": "A living space made for gathering"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=1800&q=90",
+        "alt": "Layered lighting in a modern interior",
+        "caption": "Layered lighting for every moment"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=90",
+        "alt": "Architectural detailing in a refined home",
+        "caption": "Details kept beautifully discreet"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A contemporary home opening to the outdoors",
+        "caption": "Connected living inside and out"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=90",
+        "alt": "Modern residential architecture at dusk",
+        "caption": "Technology planned with the architecture"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A home integrated with its landscape",
+        "caption": "A natural extension of the home"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A quiet modern bedroom",
+        "caption": "A softer landing at the end of the day"
+      }
+    ]
+  },
+  {
+    "slug": "pacific-courtyard",
+    "title": "Pacific Courtyard",
+    "description": "A relaxed coastal residence centered on a private courtyard, with lighting, comfort and entertainment designed to move easily from inside to out.",
+    "hero": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "Pacific Courtyard, a modern residence opening to outdoor living",
+    "overviewTitle": "A courtyard at the center of it all.",
+    "lead": "The home was designed to feel open and effortless, with the courtyard connecting daily life across every space.",
+    "story": "NOVA coordinated lighting, shading, audio and control into a single intuitive experience. Daylight, evening scenes and outdoor entertaining now flow together with a simple touch.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Coastal residence"
+      },
+      {
+        "label": "Experience",
+        "value": "Lighting, audio & outdoor living"
+      },
+      {
+        "label": "Approach",
+        "value": "A seamless inside-outside flow"
+      }
+    ],
+    "images": [
+      {
+        "image": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A discreet system for everyday control",
+        "caption": "Subtle control, always within reach"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A bright home opening to its courtyard",
+        "caption": "The courtyard brings every space together"
+      },
+      {
+        "image": "/images/lighting-night-exterior.webp",
+        "alt": "A contemporary courtyard residence softly illuminated after sunset",
+        "caption": "Outdoor lighting carries the evening beyond the home"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1800&q=90",
+        "alt": "Entertainment integrated into the living space",
+        "caption": "The experience stays simple and intuitive"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1781795290283-893dd050eeb3?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A modern residence looking toward the coast",
+        "caption": "Indoor and outdoor living flow together"
+      }
+    ]
+  },
+  {
+    "slug": "hillside-retreat",
+    "title": "Hillside Retreat",
+    "description": "A quiet escape framed by trees and long views. Integrated comfort and entertainment help the home feel welcoming in every season.",
+    "hero": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "Hillside Retreat, a contemporary home set among trees",
+    "overviewTitle": "A quieter way to come home.",
+    "lead": "Set into a sloping landscape, this retreat needed technology that stayed out of sight and made every room feel easy to use.",
+    "story": "NOVA brought lighting, climate, audio and network together around the home’s architecture. With thoughtful scenes and simple control, the spaces shift naturally from bright mornings to relaxed evenings.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Hillside residence"
+      },
+      {
+        "label": "Experience",
+        "value": "Lighting, climate & audio"
+      },
+      {
+        "label": "Approach",
+        "value": "Comfort that follows the day"
+      }
+    ],
+    "images": [
+      {
+        "image": "/images/network-luxury-home.webp",
+        "alt": "A modern home nestled within a wooded landscape at twilight",
+        "caption": "Architecture in conversation with nature"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1776362355123-ca966d36e29c?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A sculptural staircase in a light-filled home",
+        "caption": "A graceful connection between levels"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1762117361523-0fb17f384e73?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A welcoming living room with natural materials",
+        "caption": "A place to gather at the end of the day"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1560185009-5bf9f2849488?auto=format&fit=crop&w=1800&q=90",
+        "alt": "An airy interior framed by the garden",
+        "caption": "Views and comfort in balance"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1706164971309-fb4785fe6ceb?auto=format&fit=crop&w=1800&q=90",
+        "alt": "Modern home exterior surrounded by trees",
+        "caption": "A calm retreat in every season"
+      }
+    ]
+  },
+  {
+    "slug": "oak-and-stone-residence",
+    "title": "Oak & Stone Residence",
+    "description": "Natural materials, warm light and a considered technology plan come together in a home designed for calm everyday living.",
+    "hero": "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "Oak & Stone Residence, a warm contemporary home in natural materials",
+    "overviewTitle": "Technology in harmony with the materials.",
+    "lead": "Oak, stone and soft natural light set the tone for this home. Every technology choice needed to support that sense of calm.",
+    "story": "NOVA designed a cohesive system for lighting, shades, entertainment and connectivity. Controls are simple, equipment stays discreet, and each space feels considered from morning through night.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Integrated family home"
+      },
+      {
+        "label": "Experience",
+        "value": "Lighting, shades & connectivity"
+      },
+      {
+        "label": "Approach",
+        "value": "Discreet by design"
+      }
+    ],
+    "images": [
+      {
+        "image": "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A carefully composed residential interior",
+        "caption": "Natural materials bring warmth to the home"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1615986201152-7686a4867f30?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A considered home with soft natural light",
+        "caption": "Lighting follows the changing day"
+      },
+      {
+        "image": "/images/lighting-night-cove.webp",
+        "alt": "Warm layered lighting across a refined contemporary interior",
+        "caption": "Lighting follows the changing day"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A warm modern room with refined details",
+        "caption": "Details designed to feel effortless"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A modern residence framed by the landscape",
+        "caption": "A connected home with a natural rhythm"
+      }
+    ]
+  },
+  {
+    "slug": "the-atrium-house",
+    "title": "The Atrium House",
+    "description": "An open, light-filled home where a central atrium brings nature indoors and smart systems make each space feel intuitive.",
+    "hero": "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "The Atrium House, a light-filled home with an open central living space",
+    "overviewTitle": "A bright center for everyday life.",
+    "lead": "The atrium gives the home its character, drawing natural light through the spaces and connecting the people within them.",
+    "story": "NOVA shaped lighting, shading and whole-home control around the architecture. Carefully balanced scenes make it easy to welcome daylight, create evening warmth and move from one space to another.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Contemporary residence"
+      },
+      {
+        "label": "Experience",
+        "value": "Lighting, shades & scenes"
+      },
+      {
+        "label": "Approach",
+        "value": "Built around natural light"
+      }
+    ],
+    "images": [
+      {
+        "image": "https://images.unsplash.com/photo-1773754532196-014342510e64?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A generous modern living room",
+        "caption": "The heart of the home stays bright"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1770756051811-1612ac8bedfa?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A clean-lined house in soft daylight",
+        "caption": "The architecture leads the experience"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1722764373797-cdcbbaa8513f?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A relaxed interior for daily routines",
+        "caption": "Every room responds simply"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A bright living space with welcoming proportions",
+        "caption": "Daylight shapes the atmosphere"
+      },
+      {
+        "image": "/images/shades-luxury-living.webp",
+        "alt": "A light-filled living room with full-height windows and tailored woven shades",
+        "caption": "Daylight shaped to suit the room"
+      }
+    ]
+  },
+  {
+    "slug": "seacliff-pavilion",
+    "title": "Seacliff Pavilion",
+    "description": "A modern pavilion made for open-air living, with connected audio, lighting and comfort that carry naturally from the interior to the terrace.",
+    "hero": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2400&q=90",
+    "heroAlt": "Seacliff Pavilion, a contemporary home designed for outdoor living",
+    "overviewTitle": "A home that opens to the coast.",
+    "lead": "With generous windows and outdoor gathering spaces, the pavilion is designed to keep the landscape part of daily life.",
+    "story": "NOVA connected interior and exterior audio, lighting and climate into one simple system. The result is an easy transition from quiet mornings indoors to evenings shared outdoors.",
+    "facts": [
+      {
+        "label": "Project",
+        "value": "Coastal pavilion"
+      },
+      {
+        "label": "Experience",
+        "value": "Outdoor audio & lighting"
+      },
+      {
+        "label": "Approach",
+        "value": "One connected living space"
+      }
+    ],
+    "images": [
+      {
+        "image": "https://images.unsplash.com/photo-1783962211635-ef0af72c7759?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A light-filled modern living room",
+        "caption": "Coastal living with a softer pace"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A hillside home opening toward its setting",
+        "caption": "Comfort reaches every corner"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A contemporary home set among trees",
+        "caption": "Technology sits quietly in the architecture"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A warm living room with natural finishes",
+        "caption": "Evenings feel ready with one touch"
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90",
+        "alt": "A relaxed modern home interior",
+        "caption": "A seamless flow from room to room"
+      }
+    ]
+  }
+];
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const projectImages = project.images;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content={project.description}
+    />
+    <meta name="theme-color" content="#090909" />
+    <title>{project.title} — NOVA Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+      <link rel="stylesheet" href="/site-motion.css" />
+    <script src="/site-motion.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="/" aria-label="NOVA home">
+        NOVA<span></span>
+      </a>
+      <nav aria-label="Primary navigation" id="primary-navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/journal">Journal</a>
+        <a href="/projects" aria-current="page">Projects</a>
+        <div class="services-menu">
+          <button
+            class="services-trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Core services <span aria-hidden="true">+</span>
+          </button>
+          <div class="services-dropdown">
+            <a href="/services/security-cameras">Security &amp; Cameras</a>
+            <a href="/services/home-network-wifi">Home Network &amp; WiFi</a>
+            <a href="/services/whole-home-audio">Whole-Home Audio</a>
+            <a href="/services/intelligent-lighting">Intelligent Lighting</a>
+            <a href="/services/automated-shades">Automated Shades</a>
+            <a href="/services/home-theater">Home Theater</a>
+          </div>
+        </div>
+      </nav>
+      <a class="header-cta" href="/consultation">
+        Start a project <i aria-hidden="true">&rarr;</i>
+      </a>
+      <button
+        class="menu"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main class="project-detail">
+      <section class="project-detail-intro" aria-labelledby="project-detail-title">
+        <div class="project-detail-intro-inner">
+          <div class="project-detail-heading">
+            <h1 id="project-detail-title">{project.title}</h1>
+            <p>{project.description}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-cover" aria-label={project.title}>
+        <img
+          src={project.hero}
+          alt={project.heroAlt}
+          fetchpriority="high"
+        />
+        <div class="project-cover-caption">
+          <span>{project.title}</span>
+          <span>01 / {project.images.length.toString().padStart(2, "0")}</span>
+        </div>
+      </section>
+
+      <section class="project-story" aria-label={project.title + " project story"}>
+        <aside class="project-story-sidebar">
+          <div class="project-story-sticky">
+            <p class="eyebrow"><span></span> Project overview</p>
+            <h2>{project.overviewTitle}</h2>
+            <p class="project-story-lead">{project.lead}</p>
+            <p>{project.story}</p>
+            <dl class="project-facts">
+              {project.facts.map((fact) => (
+                <div><dt>{fact.label}</dt><dd>{fact.value}</dd></div>
+              ))}
+            </dl>
+          </div>
+        </aside>
+
+        <div class="project-gallery" aria-label={project.title + " interiors"}>
+          {projectImages.map((item, index) => (
+            <figure class="project-gallery-frame" style={"--image-index: " + index}>
+              <img src={item.image} alt={item.alt} loading="lazy" />
+              <figcaption>{item.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section class="project-detail-closer">
+        <p class="eyebrow"><span></span> Your home, thoughtfully connected</p>
+        <h2>Let’s shape a home around <em>your life.</em></h2>
+        <a class="button button-primary" href="/consultation">
+          Start a conversation <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand-column">
+          <a class="footer-logo" href="/" aria-label="NOVA home">
+            NOVA<span aria-hidden="true"></span>
+          </a>
+          <p class="footer-brand-line">
+            Intelligent spaces, simply considered. Thoughtful technology,
+            designed around the way you live.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Experiences">
+          <h2>Experiences</h2>
+          <a href="/services/home-network-wifi">Smart home control</a>
+          <a href="/services/home-theater">Home theater</a>
+          <a href="/services/whole-home-audio">Whole-home audio</a>
+          <a href="/services/intelligent-lighting">Lighting design</a>
+          <a href="/services/automated-shades">Lighting control &amp; shades</a>
+          <a href="/services/security-cameras">Security &amp; cameras</a>
+        </nav>
+        <nav class="footer-links" aria-label="Studio">
+          <h2>Studio</h2>
+          <a href="/about#our-approach">Our approach</a>
+          <a href="/projects">Projects</a>
+          <a href="/journal">Journal</a>
+          <a href="/#reviews">Client stories</a>
+          <a href="/#contact">Contact</a>
+          <a href="/#contact">Service &amp; support</a>
+        </nav>
+        <div class="footer-links footer-areas">
+          <h2>Service areas</h2>
+          <span>London</span>
+          <span>Greater London</span>
+          <span>Surrey &amp; Home Counties</span>
+          <span>By consultation</span>
+        </div>
+        <div class="footer-contact">
+          <h2>Visit</h2>
+          <p class="footer-location-label">London studio</p>
+          <address>
+            <span>18 Greville Street,</span>
+            <span>London EC1N 8SQ</span>
+          </address>
+          <a class="footer-phone" href="tel:+4402071234567">
+            +44 (0)20 7123 4567
+          </a>
+          <a
+            class="footer-directions"
+            href="https://maps.google.com/?q=18+Greville+Street+London+EC1N+8SQ"
+          >
+            Get directions <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOVA Home Technology</p>
+        <a href="#top">
+          Back to top <span aria-hidden="true">&uarr;</span>
+        </a>
+        <p>Designed around real life.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.querySelector(".menu");
+      const navigation = document.querySelector("#primary-navigation");
+      const servicesMenu = document.querySelector(".services-menu");
+      const servicesTrigger = document.querySelector(".services-trigger");
+
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute(
+          "aria-label",
+          isOpen ? "Open navigation" : "Close navigation",
+        );
+        navigation?.classList.toggle("is-open", !isOpen);
+      });
+
+      servicesTrigger?.addEventListener("click", () => {
+        const isOpen = servicesTrigger.getAttribute("aria-expanded") === "true";
+        servicesTrigger.setAttribute("aria-expanded", String(!isOpen));
+        servicesMenu?.classList.toggle("is-open", !isOpen);
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  :root {
+    --color-background: #090909;
+    --color-surface: #11120f;
+    --color-text: #f4f1ea;
+    --color-text-muted: #d0ccc3;
+    --color-accent: #bf974e;
+    --color-border: rgba(244, 241, 234, 0.2);
+    --color-accent-hover: #d4ae68;
+    --primary: "Montserrat", sans-serif;
+    --sans: "Poppins", sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--sans);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 82px;
+    align-items: center;
+    padding: 0 clamp(22px, 3.2vw, 64px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(5, 5, 5, 0.94);
+    color: #fff;
+    backdrop-filter: blur(12px);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: flex-start;
+    font: 700 28px/1 var(--primary);
+    letter-spacing: -0.08em;
+  }
+
+  .brand span {
+    width: 7px;
+    height: 7px;
+    margin: 3px 0 0 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .site-header nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2vw, 31px);
+    margin: 0 clamp(25px, 4vw, 70px) 0 auto;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .site-header nav > a {
+    color: rgba(255, 255, 255, 0.88);
+    transition: color 180ms ease;
+  }
+
+  .site-header nav > a:hover {
+    color: #fff;
+  }
+
+  .site-header nav > a[aria-current="page"] {
+    color: #fff;
+  }
+
+  .services-menu {
+    position: relative;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    font: inherit;
+  }
+
+  .services-trigger {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .services-trigger span {
+    color: var(--color-accent-hover);
+    font: 18px/1 var(--sans);
+    transition: transform 180ms ease;
+  }
+
+  .services-menu:hover .services-trigger span,
+  .services-menu:focus-within .services-trigger span,
+  .services-menu.is-open .services-trigger span {
+    transform: rotate(45deg);
+  }
+
+  .services-dropdown {
+    position: absolute;
+    top: 40px;
+    right: -14px;
+    width: 238px;
+    padding: 9px 0;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: #090909;
+    box-shadow: 0 19px 45px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(7px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .services-menu:hover .services-dropdown,
+  .services-menu:focus-within .services-dropdown,
+  .services-menu.is-open .services-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .services-dropdown a {
+    display: block;
+    padding: 11px 15px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 160ms ease, background 160ms ease;
+  }
+
+  .services-dropdown a:hover {
+    background: #171715;
+    color: var(--color-accent-hover);
+  }
+
+  .header-cta {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    gap: 11px;
+    padding: 0 19px;
+    border-radius: 999px;
+    background: #b89654;
+    color: #171108;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 180ms ease, transform 180ms ease;
+  }
+
+  .header-cta:hover {
+    transform: translateY(-1px);
+    background: #d0ae6c;
+  }
+
+  .header-cta i {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.32);
+    color: #fff;
+    font: normal 15px/1 Arial, sans-serif;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .about-hero {
+    position: relative;
+    display: grid;
+    min-height: max(760px, 100svh);
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 150px 28px 100px;
+    text-align: center;
+  }
+
+  .hero-image,
+  .hero-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .hero-image {
+    background-image: url("/images/novara-team.jpg");
+    background-position: center 57%;
+    background-size: cover;
+    transform: scale(1.015);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(9, 9, 9, 0.45) 0%, rgba(9, 9, 9, 0.38) 28%, rgba(9, 9, 9, 0.7) 57%, #090909 100%),
+      linear-gradient(90deg, rgba(9, 9, 9, 0.36), rgba(9, 9, 9, 0.05) 50%, rgba(9, 9, 9, 0.36));
+  }
+
+  .hero-content {
+    width: min(100%, 1080px);
+    margin: auto;
+    padding-top: 28px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin: 0 0 20px;
+    color: #e2c891;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow span {
+    width: 24px;
+    height: 1px;
+    background: var(--color-accent);
+  }
+
+  h1,
+  h2,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    margin-bottom: 26px;
+    font: 500 clamp(48px, 6.3vw, 82px)/1.04 var(--primary);
+    letter-spacing: -0.065em;
+  }
+
+  h1 span {
+    color: #e2c891;
+  }
+
+  .hero-intro {
+    max-width: 970px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(16px, 1.65vw, 23px);
+    line-height: 1.8;
+  }
+
+  .hero-belief {
+    max-width: 760px;
+    margin: 36px auto 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(17px, 1.8vw, 25px);
+    line-height: 1.5;
+  }
+
+  .hero-belief strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 42px;
+  }
+
+  .button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+  }
+
+  .button span {
+    font-size: 16px;
+  }
+
+  .button-secondary {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(8, 8, 8, 0.2);
+    color: #fff;
+  }
+
+  .button-secondary:hover {
+    border-color: var(--color-accent);
+    color: #e2c891;
+  }
+
+  .button-primary {
+    background: var(--color-accent);
+    color: #1b150a;
+  }
+
+  .hero-foot {
+    position: absolute;
+    right: clamp(22px, 3.2vw, 64px);
+    bottom: 27px;
+    left: clamp(22px, 3.2vw, 64px);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-foot a span {
+    margin-left: 7px;
+    color: var(--color-accent-hover);
+    font-size: 14px;
+  }
+
+  .approach {
+    padding: clamp(70px, 7vw, 100px) 24px 112px;
+    background: var(--color-background);
+  }
+
+  .approach-inner {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+  }
+
+  .opening-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .opening-images img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.58;
+    object-fit: cover;
+  }
+
+  .approach-intro {
+    max-width: 900px;
+    margin: clamp(58px, 7vw, 86px) 0 0;
+  }
+
+  .approach-intro .eyebrow {
+    justify-content: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .approach-intro h2 {
+    margin: 0 0 20px;
+    font: 500 clamp(36px, 4.3vw, 56px)/1.08 var(--primary);
+    letter-spacing: -0.06em;
+  }
+
+  .approach-intro h2 em {
+    color: #d4ae68;
+    font-weight: 500;
+  }
+
+  .approach-intro > p:last-child {
+    max-width: 880px;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .story-images {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: clamp(48px, 6vw, 72px);
+  }
+
+  .story-images img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.8;
+    object-fit: cover;
+  }
+
+  .approach-quote {
+    max-width: 590px;
+    margin: 64px auto 0;
+    text-align: center;
+  }
+
+  .approach-quote blockquote {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .approach-quote blockquote strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .approach-quote figcaption {
+    margin-top: 25px;
+    color: var(--color-accent-hover);
+    font-size: 13px;
+  }
+
+  .what-we-do {
+    padding: clamp(82px, 10vw, 132px) 24px clamp(90px, 11vw, 145px);
+    background: #050505;
+  }
+
+  .what-inner {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+  }
+
+  .what-we-do > .what-inner > .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .what-we-do h2 {
+    margin: 0 0 clamp(54px, 7vw, 88px);
+    color: var(--color-text);
+    font: 500 clamp(46px, 5.3vw, 68px)/1.05 var(--primary);
+    letter-spacing: -0.06em;
+    text-align: center;
+  }
+
+  .what-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .what-column {
+    min-width: 0;
+  }
+
+  .what-item {
+    display: flex;
+    min-height: 78px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(244, 241, 234, 0.18);
+    color: #f4f1ea;
+    font-size: clamp(15px, 1.35vw, 19px);
+    font-weight: 500;
+    text-align: center;
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  .what-item:hover {
+    background: #323232;
+    color: #fff;
+  }
+
+  .about-closer {
+    position: relative;
+    display: grid;
+    min-height: max(760px, 100svh);
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 120px 28px;
+    text-align: center;
+  }
+
+  .closing-image,
+  .closing-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .closing-image {
+    background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=90");
+    background-position: center 54%;
+    background-size: cover;
+    transform: scale(1.02);
+  }
+
+  .closing-overlay {
+    background:
+      radial-gradient(ellipse at 24% 58%, rgba(98, 67, 24, 0.42), transparent 44%),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.54), rgba(5, 5, 5, 0.68) 55%, rgba(5, 5, 5, 0.76)),
+      linear-gradient(90deg, rgba(5, 5, 5, 0.38), rgba(5, 5, 5, 0.12) 50%, rgba(5, 5, 5, 0.38));
+  }
+
+  .closing-content {
+    width: min(100%, 1000px);
+    margin: auto;
+  }
+
+  .closing-content .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .closing-title {
+    max-width: 960px;
+    margin: 0 auto 25px;
+    font: 500 clamp(44px, 6vw, 82px)/1.08 var(--primary);
+    letter-spacing: -0.06em;
+  }
+
+  .closing-title em {
+    position: relative;
+    display: inline-block;
+    color: #e2c891;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .closing-title em::after {
+    position: absolute;
+    right: 0.02em;
+    bottom: -0.08em;
+    left: 0.02em;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    content: "";
+    transform: rotate(-2deg);
+  }
+
+  .closing-copy {
+    max-width: 840px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(15px, 1.35vw, 19px);
+    line-height: 1.75;
+  }
+
+  .closing-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 18px;
+    margin-top: 58px;
+    padding: 0 9px 0 22px;
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    border-radius: 999px;
+    background: rgba(7, 7, 7, 0.34);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .closing-cta span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #1b150a;
+    font-size: 15px;
+  }
+
+  .closing-cta:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-hover);
+    background: rgba(7, 7, 7, 0.62);
+  }
+
+  @media (max-width: 900px) {
+    .site-header {
+      height: 80px;
+    }
+
+    .site-header nav {
+      gap: 19px;
+      margin-right: 24px;
+      font-size: 12px;
+    }
+
+    .header-cta {
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 12px;
+    }
+
+    .about-closer {
+      min-height: max(700px, 100svh);
+    }
+
+    .about-hero {
+      min-height: max(700px, 100svh);
+      padding: 130px 30px 100px;
+    }
+
+    .hero-intro {
+      max-width: 750px;
+    }
+
+    .approach {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .site-header {
+      height: 74px;
+      padding: 0 22px;
+    }
+
+    .brand {
+      font-size: 25px;
+    }
+
+    .site-header nav {
+      position: absolute;
+      top: 74px;
+      right: 16px;
+      left: 16px;
+      display: none;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+      padding: 10px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      background: rgba(13, 13, 12, 0.97);
+      backdrop-filter: blur(16px);
+    }
+
+    .site-header nav.is-open {
+      display: flex;
+    }
+
+    .site-header nav > a {
+      padding: 17px 0;
+      font-size: 14px;
+    }
+
+    .services-menu {
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .services-trigger {
+      width: 100%;
+      justify-content: space-between;
+      padding: 13px 0;
+      font-size: 14px;
+    }
+
+    .services-dropdown {
+      position: static;
+      display: none;
+      width: 100%;
+      padding: 0 0 8px 12px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    .services-menu:hover .services-dropdown,
+    .services-menu:focus-within .services-dropdown,
+    .services-menu.is-open .services-dropdown {
+      display: block;
+    }
+
+    .services-dropdown a {
+      padding: 10px 8px;
+      font-size: 13px;
+    }
+
+    .header-cta {
+      min-height: 36px;
+      margin-left: auto;
+      padding: 0 12px;
+      font-size: 11px;
+    }
+
+    .calendar-icon {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-left: 9px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu span {
+      display: block;
+      width: 19px;
+      height: 1px;
+      background: #fff;
+    }
+
+    .about-closer {
+      min-height: max(720px, 100svh);
+      padding: 100px 22px;
+    }
+
+    .closing-overlay {
+      background:
+        radial-gradient(ellipse at 28% 55%, rgba(98, 67, 24, 0.3), transparent 50%),
+        linear-gradient(180deg, rgba(5, 5, 5, 0.57), rgba(5, 5, 5, 0.7) 56%, rgba(5, 5, 5, 0.82));
+    }
+
+    .closing-content .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .closing-title {
+      font-size: clamp(42px, 11vw, 60px);
+    }
+
+    .closing-copy {
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .closing-cta {
+      margin-top: 36px;
+    }
+
+    .about-hero {
+      min-height: max(720px, 100svh);
+      padding: 120px 22px 110px;
+    }
+
+    .hero-image {
+      background-position: 52% center;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(180deg, rgba(9, 9, 9, 0.52), rgba(9, 9, 9, 0.47) 30%, rgba(9, 9, 9, 0.76) 63%, #090909),
+        linear-gradient(90deg, rgba(9, 9, 9, 0.3), transparent 55%, rgba(9, 9, 9, 0.3));
+    }
+
+    .hero-content {
+      padding-top: 0;
+    }
+
+    .eyebrow {
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 9px;
+      letter-spacing: 0.11em;
+    }
+
+    .eyebrow span {
+      width: 16px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: clamp(43px, 12vw, 65px);
+    }
+
+    .hero-intro {
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .hero-belief {
+      margin-top: 25px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 44px;
+      padding: 0 15px;
+      font-size: 12px;
+    }
+
+    .what-we-do {
+      padding: 76px 22px 88px;
+    }
+
+    .what-columns {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .what-we-do h2 {
+      margin-bottom: 42px;
+    }
+
+    .what-item {
+      min-height: 66px;
+      font-size: 16px;
+    }
+
+    .approach {
+      padding: 62px 22px 78px;
+    }
+
+    .opening-images {
+      gap: 9px;
+    }
+
+    .opening-images img {
+      aspect-ratio: 0.95;
+    }
+
+    .approach-intro {
+      margin-top: 44px;
+    }
+
+    .approach-intro h2 {
+      font-size: 36px;
+    }
+
+    .approach-intro > p:last-child {
+      font-size: 14px;
+    }
+
+    .story-images {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .story-images img {
+      aspect-ratio: 1.2;
+    }
+
+    .approach-quote {
+      margin-top: 40px;
+    }
+
+    .hero-foot {
+      bottom: 19px;
+      font-size: 8px;
+    }
+
+    .hero-foot > span {
+      max-width: 45%;
+    }
+
+    .hero-foot a {
+      text-align: right;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+
+  footer.site-footer {
+    display: block;
+    padding: 0 clamp(24px, 8vw, 154px);
+    border-top: 1px solid var(--color-border);
+    background: #11120f;
+    color: var(--color-text);
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 36px);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: clamp(52px, 6vw, 84px) 0 56px;
+    align-items: start;
+  }
+
+  .footer-brand-column,
+  .footer-contact,
+  .footer-links {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+    margin: 0;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: flex-start;
+    color: var(--color-text);
+    font: 500 42px/0.95 var(--primary);
+    letter-spacing: -0.09em;
+  }
+
+  .footer-logo span {
+    width: 7px;
+    height: 7px;
+    margin: 2px 0 0 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .footer-brand-line {
+    max-width: 290px;
+    margin: 23px 0 0;
+    color: var(--color-text-muted);
+    font: 400 14px/1.65 var(--sans);
+  }
+
+  .footer-links {
+    gap: 13px;
+  }
+
+  .footer-links h2,
+  .footer-contact h2 {
+    margin: 2px 0 9px;
+    color: var(--color-accent);
+    font: 500 10px/1.4 var(--sans);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer-links a,
+  .footer-areas > span {
+    color: var(--color-text-muted);
+    font: 400 13px/1.5 var(--sans);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover,
+  .footer-contact a:hover,
+  .footer-bottom a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .footer-contact {
+    gap: 8px;
+  }
+
+  .footer-contact h2 {
+    margin-bottom: 8px;
+  }
+
+  .footer-location-label {
+    margin: 0;
+    color: var(--color-text-muted);
+    font: 500 10px/1.5 var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .footer-contact address {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--color-text);
+    font: normal 14px/1.55 var(--sans);
+  }
+
+  .footer-phone,
+  .footer-directions {
+    color: var(--color-text);
+    font: 400 13px/1.5 var(--sans);
+    transition: color 0.2s ease;
+  }
+
+  .footer-phone {
+    margin-top: 2px;
+  }
+
+  .footer-directions {
+    margin-top: 10px;
+    color: var(--color-text-muted);
+  }
+
+  .footer-directions span {
+    margin-left: 5px;
+    color: var(--color-accent);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 62px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-bottom p,
+  .footer-bottom a {
+    margin: 0;
+    color: rgba(184, 179, 168, 0.72);
+    font: 400 10px/1.5 var(--sans);
+  }
+
+  .footer-bottom a span {
+    margin-left: 7px;
+    color: var(--color-accent);
+    font: 14px/1 Arial, sans-serif;
+  }
+
+  @media (max-width: 1200px) {
+    .footer-main {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px 30px;
+    }
+
+    .footer-brand-column {
+      grid-row: span 2;
+    }
+  }
+
+  @media (max-width: 760px) {
+    footer.site-footer {
+      padding: 0 26px;
+    }
+
+    .footer-main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px 24px;
+      padding: 48px 0 40px;
+    }
+
+    .footer-brand-column {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      max-width: 430px;
+    }
+
+    .footer-contact {
+      grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+      min-height: 0;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 17px 0;
+    }
+
+    .footer-bottom p:last-child {
+      width: 100%;
+      order: 3;
+    }
+  }
+
+  @media (max-width: 420px) {
+    footer.site-footer {
+      padding: 0 20px;
+    }
+
+    .footer-main {
+      gap: 32px 18px;
+    }
+
+    .footer-logo {
+      font-size: 38px;
+    }
+
+    .footer-links a,
+    .footer-areas > span {
+      font-size: 12px;
+    }
+  }
+
+
+  .project-detail-intro {
+    padding: 140px clamp(24px, 7vw, 110px) 54px;
+    background: #090909;
+  }
+  .project-detail-intro-inner {
+    width: min(100%, 1500px);
+    margin: 0 auto;
+  }
+  .project-detail-intro .eyebrow {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  .project-detail-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: clamp(32px, 7vw, 112px);
+    align-items: end;
+  }
+  .project-detail-heading h1 {
+    margin: 0;
+    color: var(--color-text);
+    font: 500 clamp(52px, 7.5vw, 100px)/0.98 var(--primary);
+    letter-spacing: -0.075em;
+  }
+  .project-detail-heading > p {
+    max-width: 600px;
+    margin: 0 0 7px;
+    color: var(--color-text-muted);
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.8;
+  }
+  .project-cover {
+    position: relative;
+    height: min(72vh, 820px);
+    min-height: 480px;
+    overflow: hidden;
+    background: #151513;
+  }
+  .project-cover > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+  }
+  .project-cover::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 65%, rgba(0, 0, 0, 0.45));
+    content: "";
+    pointer-events: none;
+  }
+  .project-cover-caption {
+    position: absolute;
+    z-index: 1;
+    right: clamp(24px, 5vw, 72px);
+    bottom: 25px;
+    left: clamp(24px, 5vw, 72px);
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .project-story {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(40px, 7vw, 110px);
+    width: min(100%, 1500px);
+    margin: 0 auto;
+    padding: 108px 24px 130px;
+    align-items: stretch;
+    background: #090909;
+  }
+  .project-story-sidebar {
+    position: relative;
+    min-width: 0;
+  }
+  .project-story-sticky {
+    position: sticky;
+    top: 112px;
+    padding: 18px 0;
+  }
+  .project-story-sticky .eyebrow {
+    justify-content: flex-start;
+    margin-bottom: 23px;
+  }
+  .project-story-sticky h2 {
+    margin: 0 0 22px;
+    color: #f4f1ea;
+    font: 500 clamp(32px, 3.4vw, 48px)/1.08 var(--primary);
+    letter-spacing: -0.06em;
+  }
+  .project-story-sticky > p:not(.eyebrow) {
+    margin: 0 0 18px;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .project-story-sticky .project-story-lead {
+    color: #f4f1ea !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+  }
+  .project-facts {
+    margin: 14px 0 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .project-facts > div {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 14px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .project-facts dt {
+    color: var(--color-accent-hover);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .project-facts dd {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .project-gallery {
+    min-width: 0;
+    padding-bottom: 8vh;
+  }
+  .project-gallery-frame {
+    position: sticky;
+    top: calc(98px + (var(--image-index) * 5px));
+    z-index: calc(var(--image-index) + 1);
+    height: min(76vh, 720px);
+    min-height: 460px;
+    margin: 0 0 18px;
+    overflow: hidden;
+    background: #161613;
+  }
+  .project-gallery-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .project-gallery-frame figcaption {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-align: right;
+    text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+  .project-detail-closer {
+    display: flex;
+    min-height: 440px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 24px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(98, 67, 24, 0.24), transparent 52%), #050505;
+    text-align: center;
+  }
+  .project-detail-closer .eyebrow {
+    margin-bottom: 20px;
+  }
+  .project-detail-closer h2 {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #f4f1ea;
+    font: 500 clamp(38px, 5vw, 66px)/1.08 var(--primary);
+    letter-spacing: -0.06em;
+  }
+  .project-detail-closer h2 em {
+    color: var(--color-accent-hover);
+    font-style: normal;
+  }
+  .project-detail-closer .button {
+    margin-top: 30px;
+  }
+  @media (max-width: 900px) {
+    .project-detail-intro {
+      padding: 122px 28px 42px;
+    }
+    .project-detail-heading {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    .project-detail-heading h1 {
+      font-size: clamp(48px, 9vw, 76px);
+    }
+    .project-cover {
+      height: 62vh;
+      min-height: 400px;
+    }
+    .project-story {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 75px 28px 90px;
+    }
+    .project-story-sticky {
+      position: relative;
+      top: auto;
+      max-width: 680px;
+    }
+    .project-gallery-frame {
+      top: 88px;
+      height: 65vh;
+      min-height: 380px;
+    }
+  }
+  @media (max-width: 600px) {
+    .project-detail-intro {
+      padding: 108px 22px 32px;
+    }
+    .project-detail-intro .eyebrow {
+      margin-bottom: 16px;
+    }
+    .project-detail-heading {
+      gap: 16px;
+    }
+    .project-detail-heading h1 {
+      font-size: clamp(43px, 12vw, 62px);
+    }
+    .project-detail-heading > p {
+      font-size: 14px;
+    }
+    .project-cover {
+      height: 54vh;
+      min-height: 320px;
+    }
+    .project-story {
+      padding: 60px 22px 75px;
+    }
+    .project-story-sticky h2 {
+      font-size: 34px;
+    }
+    .project-facts > div {
+      grid-template-columns: 90px 1fr;
+    }
+    .project-gallery-frame {
+      top: 82px;
+      height: 55vh;
+      min-height: 300px;
+    }
+    .project-gallery-frame figcaption {
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      font-size: 9px;
+    }
+  }
+
+</style>

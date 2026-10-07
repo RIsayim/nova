@@ -1,0 +1,612 @@
+---
+export function getStaticPaths() {
+  return [
+    ['security-cameras', 'Security & Cameras', 'See more. Know more. Protect what matters with intelligent surveillance designed discreetly into the architecture.'],
+    ['home-network-wifi', 'Home Network & WiFi', 'A resilient, invisible network is the foundation for every effortless connected-home experience.'],
+    ['whole-home-audio', 'Whole-Home Audio', 'Music, perfectly placed. Exceptional sound flows through every space without disturbing its design.'],
+    ['intelligent-lighting', 'Intelligent Lighting', 'Light that follows the rhythm of your day — natural, nuanced and completely personal.'],
+    ['automated-shades', 'Automated Shades', 'Privacy, comfort and daylight precisely tuned to the architecture and the moment.'],
+    ['home-theater', 'Home Theater', 'A cinematic experience, crafted around your space and built for the way you like to escape.'],
+  ].map(([service, title, intro]) => ({ params: { service }, props: { service, title, intro } }));
+}
+const { service, title, intro } = Astro.props;
+const isAudioService = service === 'whole-home-audio';
+const serviceData = {"security-cameras":{"eyebrow":"Security, considered","lead":"Feel secure.","accent":"at home.","heroImage":"/images/security-night-home.webp","intro":"Discreet cameras for a clearer view at home.","belief":"See what matters with ease,\nwhile your home keeps its calm.","planKicker":"A clearer view, by design","planTitle":"Protection that feels part of home","planIntro":"We plan camera coverage around your property and routines, bringing reliable visibility into a calm, considered system.","stickyTitle":"See what matters, clearly","stickyCopy":"Careful placement covers the entrances and shared spaces that matter without overwhelming the architecture.","featureVideo":"/videos/security-feature.mp4","featureImage":"/images/security-night-interior.webp","solutions":[["Entry points","A confident welcome","Keep an eye on entrances and arrival points with dependable views.","/images/security-night-home.webp"],["Perimeter","Coverage with context","Plan useful coverage around the shape of your home and landscape.","/images/security-night-garden.webp"],["Low light","Clear after dark","Choose capable cameras and considered positioning for night-time visibility.","/images/security-night-home.webp"],["One system","Simple to check","Bring camera views into an intuitive connected experience.","/images/security-night-interior.webp"]],"expKicker":"Protection, thoughtfully integrated","expTitle":"A clearer picture of home","expIntro":"A well-planned camera system supports everyday confidence and respects the way your home looks and feels.","experiences":[["Well considered","Coverage shaped around your home","Useful angles planned around the architecture and landscape.","/images/security-night-garden.webp"],["Easy to access","Views when you need them","Review the right camera views through a simple connected experience.","/images/security-night-interior.webp"],["A quieter presence","Technology that belongs","Equipment and placement sit naturally within the home’s design.","/images/security-night-home.webp"],["Connected response","Confidence in context","Connect cameras with wider home systems for coordinated control.","/images/security-night-garden.webp"]],"story1Title":"Designed for peace of mind","story1":"Well-positioned cameras make it easier to stay aware of what is happening around home.","story1Video":"/videos/security-outdoor-story.mp4","story1Image":"/images/security-night-garden.webp","story2Title":"A view that fits your routine","story2":"Check the moments that matter through a system that feels clear and easy to use.","story2Image":"/images/security-night-interior.webp","closeKicker":"A more considered sense of security","closeLead":"Feel at ease","closeAccent":"at home.","closeCopy":"Let’s plan a camera system that fits your property and the way you live.","closeImage":"/images/security-night-home.webp","heroVideo":"/videos/security-outdoor-story.mp4"},"home-network-wifi":{"eyebrow":"A connected foundation","lead":"A home that stays","accent":"in sync.","heroImage":"/images/network-luxury-home.webp","intro":"Fast, dependable connectivity designed to support every room and everyday moment.","belief":"One reliable foundation for everything you do at home.","planKicker":"The foundation of connected living","planTitle":"Reliable from room to room","planIntro":"A well-designed network keeps work, entertainment and smart-home systems responsive throughout your property.","stickyTitle":"Strong signal, thoughtfully placed","stickyCopy":"We plan wired connections and wireless access points for consistent coverage where you need it.","featureImage":"/images/network-luxury-rack.webp","solutions":[["Whole-home Wi-Fi","Coverage without dead zones","Access points deliver consistent signal throughout the home.","/images/network-luxury-access.webp"],["Wired connections","A dependable backbone","Wired links support high-demand devices and stable systems.","/images/network-luxury-rack.webp"],["Smart home ready","A network built to grow","Give lighting, audio and control a dependable foundation.","/images/network-luxury-home.webp"],["Managed performance","Clearer, simpler support","A considered setup helps keep devices connected.","/images/network-luxury-rack.webp"]],"expKicker":"Connectivity throughout","expTitle":"A stronger foundation for home","expIntro":"A reliable network helps every connected system work together with less friction.","experiences":[["Streaming","Smooth across your spaces","Support streaming, browsing and video calls throughout the home.","/images/network-luxury-home.webp"],["Work from home","Calls that stay clear","Reliable connectivity makes working from home feel easier.","/images/network-luxury-access.webp"],["Connected systems","Technology in step","A stable network helps systems respond together room by room.","/images/network-luxury-rack.webp"],["Ready to evolve","Built around your needs","Flexible infrastructure gives your home room to grow.","/images/network-luxury-home.webp"]],"story1Title":"The unseen system behind it all","story1":"From a video call to a film night, a strong network keeps the home responsive.","story1Image":"/images/network-luxury-home.webp","story2Title":"Coverage that follows your day","story2":"Stay connected as you move from workspace to living room and garden.","story2Image":"/images/network-luxury-access.webp","closeKicker":"Connectivity, made considered","closeLead":"Everything works","closeAccent":"together.","closeCopy":"Let’s create a network that feels effortless today and is ready for what comes next.","closeImage":"/images/network-luxury-home.webp","featureVideo":"/videos/network-feature.mp4","story1Video":"/videos/network-story.mp4","heroVideo":"/videos/network-feature.mp4"},"whole-home-audio":{"eyebrow":"Whole-home audio","lead":"Sound that","accent":"belongs.","heroVideo":"/videos/whole-home-audio-hero.mp4","heroImage":"/images/audio-luxury-architecture.webp","intro":"Beautifully balanced sound, designed for your rooms and the way you live.","belief":"From morning playlists to evening gatherings, it all sounds effortless.","planKicker":"A more considered way to listen","planTitle":"Architectural & immersive audio","planIntro":"We integrate speakers with the architecture for natural, beautifully balanced listening in every room.","stickyTitle":"Integrated into the architecture","stickyCopy":"In-wall and in-ceiling speakers keep the finish clean while creating even sound throughout the home.","featureVideo":"/videos/whole-home-audio-hero.mp4","featureImage":"/images/audio-luxury-architecture.webp","solutions":[["In-wall","Sound within the walls","Enjoy clean, directional sound with technology kept discreet.","/images/audio-luxury-architecture.webp"],["In-ceiling","Even sound, overhead","Bring music into shared spaces with balanced coverage.","/images/audio-luxury-architecture.webp"],["Small aperture","Quietly integrated","Preserve interior details while keeping sound close.","/images/audio-luxury-listening.webp"],["Subwoofers","Depth you can feel","Add warmth and impact, tuned to the room.","/images/audio-luxury-listening.webp"]],"expKicker":"Sound beyond the walls","expTitle":"Outdoor audio systems","expIntro":"Rich, even sound for terraces, gardens and poolside spaces, planned to blend with the landscape.","experiences":[["Even coverage","Sound that fills the space","Careful placement creates balanced listening outdoors.","/images/audio-luxury-outdoor.webp"],["Weather ready","Built for the elements","Outdoor-rated equipment handles changing weather.","/images/audio-luxury-outdoor.webp"],["Hidden bass","Depth without clutter","Discreet subwoofers add warmth while staying out of sight.","/images/audio-luxury-listening.webp"],["Blends in","Designed for the landscape","Finishes and placement sit naturally among planting.","/images/audio-luxury-outdoor.webp"]],"story1Title":"Extend the experience beyond your home","story1":"Discreet landscape speakers and weather-ready systems bring considered sound outdoors.","story1Video":"/videos/outdoor-audio-experience.mp4","story1Image":"/images/audio-luxury-outdoor.webp","story2Title":"Made for how you live","story2":"Simple controls make it easy to set the right mood from morning through evening.","story2Image":"/images/audio-luxury-architecture.webp","closeKicker":"Sound, inside and out","closeLead":"Bring every room into","closeAccent":"harmony.","closeCopy":"From a listening room to music across the garden, NOVA brings every detail together around how you live.","closeImage":"/images/audio-luxury-architecture.webp"},"intelligent-lighting":{"eyebrow":"Light, thoughtfully composed","lead":"Light that","accent":"feels right.","heroImage":"/images/lighting-night-hero.webp","intro":"Lighting tailored to your routines and architecture.","belief":"Scenes for focus, comfort and atmosphere,\nwith control kept simple.","planKicker":"Designed around the day","planTitle":"Light with feeling and purpose","planIntro":"Layered lighting brings clarity, warmth and atmosphere to daily routines and evenings at home.","stickyTitle":"Every layer has a purpose","stickyCopy":"Ambient, task and accent lighting bring out a room’s details and make routines feel intuitive.","featureImage":"/images/lighting-night-cove.webp","solutions":[["Ambient","A welcoming foundation","Soft, even light makes a room comfortable.","/images/lighting-night-cove.webp"],["Task","Light where you need it","Focused lighting supports reading, cooking and work.","/images/lighting-night-dining.webp"],["Accent","Bring details into focus","Highlight art, textures and architecture with light.","/images/lighting-night-exterior.webp"],["Scenes","One touch sets the mood","Combine layers for morning, entertaining and evening.","/images/lighting-night-hero.webp"]],"expKicker":"Layers that work in harmony","expTitle":"Lighting shaped around your life","expIntro":"Thoughtful lighting supports the atmosphere you want and the activities that fill each space.","experiences":[["Morning light","A calm start to the day","Gentle scenes create a bright, comfortable start.","/images/lighting-night-dining.webp"],["Focused moments","Clarity for the task","Bring light to kitchens, reading corners and workspaces.","/images/lighting-night-exterior.webp"],["Evening scenes","A softer atmosphere","Shift toward warmth and ease as the day winds down.","/images/lighting-night-cove.webp"],["Art and detail","Highlight what matters","Accentuate materials and objects without visual clutter.","/images/lighting-night-hero.webp"]],"story1Title":"Lighting that moves with your day","story1":"Responsive scenes help every room feel right from a clear start to a quiet evening.","story1Image":"/images/lighting-night-cove.webp","story2Title":"A natural part of the architecture","story2":"Fixtures, controls and light levels are planned to complement the interior.","story2Image":"/images/lighting-night-dining.webp","closeKicker":"Bring your home into a new light","closeLead":"Set the tone","closeAccent":"with light.","closeCopy":"Let’s shape lighting around your architecture, routines and the feeling you want at home.","closeImage":"/images/lighting-night-exterior.webp","heroVideo":"/videos/lighting-hero.mp4","featureVideo":"/videos/lighting-feature.mp4","story1Video":"/videos/lighting-story.mp4"},"automated-shades":{"eyebrow":"Daylight, beautifully managed","lead":"A softer way","accent":"to shape a room.","heroImage":"/images/shades-luxury-living.webp","intro":"Quietly automated shades bring privacy, comfort and natural light into balance.","belief":"A simple adjustment for changing light through the day.","planKicker":"Comfort in every position","planTitle":"Daylight on your terms","planIntro":"Automated shades help manage glare, privacy and warmth while preserving clean interior lines.","stickyTitle":"A quieter way to adjust","stickyCopy":"Choose fabrics, tracks and controls that suit each window, with schedules for the time of day.","featureImage":"/images/shades-luxury-dining.webp","solutions":[["Drapery","Softness and movement","Add texture and warmth with smooth automated drapery.","/images/shades-luxury-living.webp"],["Roller shades","Clean lines, precise light","Filter daylight while keeping the room connected outside.","/images/shades-luxury-dining.webp"],["Blackout","Restful darkness","Create a darker setting for bedrooms and media rooms.","/images/shades-luxury-bedroom.webp"],["Scheduling","Adjust with the day","Set shades to move with daylight and your daily routine.","/images/shades-luxury-living.webp"]],"expKicker":"Light, privacy and comfort","expTitle":"A more natural rhythm at home","expIntro":"Automated window treatments respond to changing light so rooms feel comfortable from morning through evening.","experiences":[["Filtered daylight","Soften the brightness","Diffuse direct sunlight while keeping rooms bright.","/images/shades-luxury-living.webp"],["Privacy","Close the room with ease","Adjust one window or a full room without interruption.","/images/shades-luxury-bedroom.webp"],["Temperature","A little more balance","Help reduce heat and glare as the sun moves.","/images/shades-luxury-dining.webp"],["Quiet movement","Technology out of view","Integrated motors keep adjustment smooth and discreet.","/images/shades-luxury-living.webp"]],"story1Title":"Let daylight set the pace","story1":"Shades can rise with morning light, soften direct sun and create privacy as evening arrives.","story1Image":"/images/shades-luxury-dining.webp","story2Title":"Made for the shape of your windows","story2":"Fabrics and tracks are selected to feel at home with the interior and architecture.","story2Image":"/images/shades-luxury-bedroom.webp","closeKicker":"Make room for the right light","closeLead":"Find your","closeAccent":"natural rhythm.","closeCopy":"Let’s bring privacy, daylight and comfort into balance with a considered shading plan.","closeImage":"/images/shades-luxury-living.webp","heroVideo":"/videos/automated-shades-hero.mp4","featureVideo":"/videos/automated-shades-feature.mp4","story1Video":"/videos/automated-shades-hero.mp4"},"home-theater":{"eyebrow":"Cinema, made personal","lead":"A room for","accent":"being immersed.","heroImage":"/images/home-theater-private.webp","intro":"Picture, sound and control brought together for a cinematic experience that feels entirely yours.","belief":"A more involving film night, with everything in harmony.","planKicker":"Every detail has a role","planTitle":"A cinematic experience, composed","planIntro":"We consider the room, viewing position, acoustics and control together to create an effortless experience.","stickyTitle":"The room becomes the cinema","stickyCopy":"Screen size, seating, sound and lighting are planned as one so you can settle in and focus on the story.","featureImage":"/images/home-theater-media-room.webp","solutions":[["The screen","A clear view from every seat","Choose a display size to suit the room and viewing distance.","/images/home-theater-private.webp"],["Immersive sound","Feel part of the story","Bring dialogue, music and effects into balance.","/images/home-theater-cinema-lounge.webp"],["Acoustic comfort","A room tuned for listening","Materials and treatments create focused, comfortable sound.","/images/home-theater-media-room.webp"],["Simple control","Ready when you are","One touch can set the room for a film.","/images/home-theater-private.webp"]],"expKicker":"A more immersive evening","expTitle":"Cinema that feels like your own","expIntro":"From a dedicated screening room to a living space that transforms, every element is designed around how you watch.","experiences":[["Picture","Details that draw you in","Choose display technology for your room and viewing habits.","/images/home-theater-private.webp"],["Sound","Every note in its place","A considered layout creates clear dialogue and enveloping sound.","/images/home-theater-cinema-lounge.webp"],["Atmosphere","Settle into the scene","Lighting and shading shift the room into viewing mode.","/images/home-theater-media-room.webp"],["One-touch control","The evening, ready","Bring picture, sound and light together with one scene.","/images/home-theater-private.webp"]],"story1Title":"A place to get lost in the story","story1":"The right balance of picture, sound and lighting makes a dedicated room immersive.","story1Image":"/images/home-theater-cinema-lounge.webp","story2Title":"A familiar room, transformed","story2":"Flexible technology brings cinema to a living space while keeping everyday comfort intact.","story2Image":"/images/home-theater-media-room.webp","closeKicker":"Make the next film night memorable","closeLead":"Your own","closeAccent":"private cinema.","closeCopy":"Let’s create a cinematic space tailored to your home and the way you like to watch.","closeImage":"/images/home-theater-private.webp","heroVideo":"/videos/home-theater-hero.mp4","featureVideo":"/videos/home-theater-feature.mp4","story1Video":"/videos/home-theater-story.mp4"}};
+const pageData = serviceData[service] || serviceData['whole-home-audio'];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#090909" />
+    <title>{title} — NOVA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="/site-motion.css" />
+    <script src="/site-motion.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="/" aria-label="NOVA home">NOVA<span></span></a>
+      <nav aria-label="Primary navigation" id="primary-navigation">
+        <a href="/">Home</a><a href="/about">About</a><a href="/journal">Journal</a><a href="/projects">Projects</a>
+        <div class="services-menu"><button class="services-trigger" type="button" aria-haspopup="true" aria-expanded="false">Core services <span aria-hidden="true">+</span></button><div class="services-dropdown">
+          <a href="/services/security-cameras" aria-current={service === 'security-cameras' ? 'page' : undefined}>Security &amp; Cameras</a><a href="/services/home-network-wifi" aria-current={service === 'home-network-wifi' ? 'page' : undefined}>Home Network &amp; WiFi</a><a href="/services/whole-home-audio" aria-current={service === 'whole-home-audio' ? 'page' : undefined}>Whole-Home Audio</a><a href="/services/intelligent-lighting" aria-current={service === 'intelligent-lighting' ? 'page' : undefined}>Intelligent Lighting</a><a href="/services/automated-shades" aria-current={service === 'automated-shades' ? 'page' : undefined}>Automated Shades</a><a href="/services/home-theater" aria-current={service === 'home-theater' ? 'page' : undefined}>Home Theater</a>
+        </div></div>
+      </nav><a class="header-cta" href="/consultation">Start a project <i aria-hidden="true">&rarr;</i></a><button class="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    </header>
+    <main class="service-page audio-service-page">
+      <section class:list={["about-hero", "audio-hero", service === "security-cameras" && "security-service-hero", service === "intelligent-lighting" && "lighting-service-hero"]} aria-labelledby="service-title">
+        {pageData.heroVideo ? <video class="hero-video" muted loop playsinline preload="none" poster={pageData.heroImage} data-autoplay-loop aria-hidden="true"><source src={pageData.heroVideo} type="video/mp4" /></video> : <div class="hero-image" style={'background-image: url(' + pageData.heroImage + ')'} aria-hidden="true"></div>}
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> {pageData.eyebrow}</p><h1 id="service-title">{pageData.lead} <span>{pageData.accent}</span></h1>
+          <p class="hero-intro">{pageData.intro}</p><p class="hero-belief">{pageData.belief}</p>
+          <div class="hero-actions"><a class="button button-secondary" href="/projects">Discover our work <span aria-hidden="true">↗</span></a><a class="button button-primary" href="/consultation">Schedule a consultation <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="hero-foot"><span>Thoughtful technology, considered around you.</span><a href="/projects">Explore projects <span aria-hidden="true">↓</span></a></div>
+      </section>
+      <section class="audio-planning" aria-labelledby="service-planning-title">
+        <header class="audio-planning-intro"><p class="audio-section-kicker">{pageData.planKicker}</p><h2 id="service-planning-title">{pageData.planTitle}</h2><p>{pageData.planIntro}</p></header>
+        <div class="audio-planning-grid"><div class="audio-sticky-column"><div class="audio-sticky-copy"><p class="audio-section-kicker">{pageData.planKicker}</p><h3>{pageData.stickyTitle}</h3><p>{pageData.stickyCopy}</p></div>
+          <figure class="audio-feature-media">{pageData.featureVideo ? <video muted loop playsinline preload="none" poster={pageData.featureImage} data-autoplay-loop aria-hidden="true"><source src={pageData.featureVideo} type="video/mp4" /></video> : <img src={pageData.featureImage} alt={pageData.stickyTitle} loading="lazy" />}<figcaption>Every detail selected for a more natural experience at home.</figcaption></figure>
+        </div><div class="audio-solution-grid">{pageData.solutions.map(([label, heading, copy, image]) => (<article class="audio-solution-card"><figure class="audio-solution-visual"><img src={image} alt={heading} loading="lazy" /><span>{label}</span></figure><div class="audio-solution-copy"><h3>{heading}</h3><p>{copy}</p></div></article>))}</div></div>
+      </section>
+      <section class="outdoor-audio" aria-labelledby="service-experience-title">
+        <header class="outdoor-audio-intro"><p class="audio-section-kicker">{pageData.expKicker}</p><h2 id="service-experience-title">{pageData.expTitle}</h2><p>{pageData.expIntro}</p></header>
+        <div class="outdoor-audio-grid">{pageData.experiences.map(([label, heading, copy, image]) => (<article class="outdoor-audio-card"><figure class="outdoor-card-visual"><img src={image} alt={heading} loading="lazy" /><span>{label}</span></figure><div class="outdoor-card-copy"><h3>{heading}</h3><p>{copy}</p></div></article>))}</div>
+        <div class="outdoor-audio-stories"><article class="outdoor-story outdoor-story-video"><div class="outdoor-story-copy"><p class="audio-section-kicker">{pageData.expKicker}</p><h3>{pageData.story1Title}</h3><p>{pageData.story1}</p></div><figure class="outdoor-story-media">{pageData.story1Video ? <video muted loop playsinline preload="none" poster={pageData.story1Image} data-autoplay-loop aria-hidden="true"><source src={pageData.story1Video} type="video/mp4" /></video> : <img src={pageData.story1Image} alt={pageData.story1Title} loading="lazy" />}<figcaption>Technology, thoughtfully integrated into everyday life.</figcaption></figure></article>
+          <article class="outdoor-story outdoor-story-image"><div class="outdoor-story-copy"><p class="audio-section-kicker">Personal by design</p><h3>{pageData.story2Title}</h3><p>{pageData.story2}</p></div><figure class="outdoor-story-media"><img src={pageData.story2Image} alt={pageData.story2Title} loading="lazy" /><figcaption>A considered experience, made around you.</figcaption></figure></article></div>
+      </section>
+      <section class="about-closer audio-closer" aria-labelledby="service-closer-title"><div class="closing-image" style={'background-image: url(' + pageData.closeImage + ')'} aria-hidden="true"></div><div class="closing-overlay"></div><div class="closing-content"><p class="eyebrow"><span></span> {pageData.closeKicker}</p><h2 id="service-closer-title" class="closing-title">{pageData.closeLead} <em>{pageData.closeAccent}</em></h2><p class="closing-copy">{pageData.closeCopy}</p><a class="closing-cta" href="/consultation">Schedule a consultation <span aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand-column">
+          <a class="footer-logo" href="/" aria-label="NOVA home">
+            NOVA<span aria-hidden="true"></span>
+          </a>
+          <p class="footer-brand-line">
+            Intelligent spaces, simply considered. Thoughtful technology,
+            designed around the way you live.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Experiences">
+          <h2>Experiences</h2>
+          <a href="/services/home-network-wifi">Smart home control</a>
+          <a href="/services/home-theater">Home theater</a>
+          <a href="/services/whole-home-audio">Whole-home audio</a>
+          <a href="/services/intelligent-lighting">Lighting design</a>
+          <a href="/services/automated-shades">Lighting control &amp; shades</a>
+          <a href="/services/security-cameras">Security &amp; cameras</a>
+        </nav>
+        <nav class="footer-links" aria-label="Studio">
+          <h2>Studio</h2>
+          <a href="/about#our-approach">Our approach</a>
+          <a href="/projects">Projects</a>
+          <a href="/journal">Journal</a>
+          <a href="/#reviews">Client stories</a>
+          <a href="/#contact">Contact</a>
+          <a href="/#contact">Service &amp; support</a>
+        </nav>
+        <div class="footer-links footer-areas">
+          <h2>Service areas</h2>
+          <span>London</span>
+          <span>Greater London</span>
+          <span>Surrey &amp; Home Counties</span>
+          <span>By consultation</span>
+        </div>
+        <div class="footer-contact">
+          <h2>Visit</h2>
+          <p class="footer-location-label">London studio</p>
+          <address>
+            <span>18 Greville Street,</span>
+            <span>London EC1N 8SQ</span>
+          </address>
+          <a class="footer-phone" href="tel:+4402071234567">
+            +44 (0)20 7123 4567
+          </a>
+          <a
+            class="footer-directions"
+            href="https://maps.google.com/?q=18+Greville+Street+London+EC1N+8SQ"
+          >
+            Get directions <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NOVA Home Technology</p>
+        <a href="#top">
+          Back to top <span aria-hidden="true">&uarr;</span>
+        </a>
+        <p>Designed around real life.</p>
+      </div>
+    </footer>
+    <script>
+      const menuButton = document.querySelector(".menu");
+      const navigation = document.querySelector("#primary-navigation");
+      const servicesMenu = document.querySelector(".services-menu");
+      const servicesTrigger = document.querySelector(".services-trigger");
+      menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+        navigation?.classList.toggle("is-open", !isOpen);
+      });
+      servicesTrigger?.addEventListener("click", () => {
+        const isOpen = servicesTrigger.getAttribute("aria-expanded") === "true";
+        servicesTrigger.setAttribute("aria-expanded", String(!isOpen));
+        servicesMenu?.classList.toggle("is-open", !isOpen);
+      });
+    </script>
+  </body>
+</html>
+<style>
+  :root { --lime: #bf974e; --ink: #f4f1ea; --black: #090909; --muted: #b8b3a8; --sans: 'Poppins', sans-serif; --serif: 'Montserrat', sans-serif; --primary: 'Montserrat', sans-serif; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--black); color: var(--ink); font-family: var(--sans); }
+  a { color: inherit; text-decoration: none; }
+  .service-header { position: relative; z-index: 5; display: flex; height: 88px; align-items: center; justify-content: space-between; padding: 0 4vw; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .brand { font-weight: 700; font-size: 28px; letter-spacing: -.08em; }
+  .brand span { display: inline-block; width: 7px; height: 7px; margin: 3px 0 0 5px; border-radius: 50%; background: var(--lime); vertical-align: top; }
+  .back, .eyebrow { font: 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+  .back { color: var(--lime); }
+  .service-page { min-height: calc(100vh - 158px); }
+  .service-standard { max-width: 950px; min-height: calc(100vh - 158px); padding: 18vh 9vw; }
+  .service-standard .eyebrow { margin: 0 0 26px; color: var(--lime); }
+  .service-standard h1 { margin: 0 0 36px; font: 500 clamp(56px,9vw,136px)/.9 var(--serif); letter-spacing: -.07em; }
+  .intro { max-width: 600px; color: var(--muted); font-size: 18px; line-height: 1.7; }
+  .cta { display: inline-flex; gap: 35px; margin-top: 30px; padding: 17px 20px; background: var(--lime); color: #171108; font-size: 12px; font-weight: 600; letter-spacing: .02em; transition: background 180ms ease; }
+  .cta:hover { background: #d4ae68; }
+  .cta span { font-size: 18px; }
+  .service-footer { display: flex; justify-content: space-between; gap: 16px; padding: 26px 4vw; border-top: 1px solid rgba(244,241,234,.2); color: #aaa9a3; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+
+  .site-header { position: fixed; z-index: 1000; top: 0; left: 0; display: flex; width: 100%; height: 82px; align-items: center; padding: 0 clamp(22px,3.2vw,64px); border-bottom: 1px solid rgba(255,255,255,.16); background: rgba(5,5,5,.94); color: #fff; backdrop-filter: blur(12px); }
+  .site-header .brand { display: inline-flex; align-items: flex-start; color: #fff; font: 700 28px/1 var(--primary); letter-spacing: -.08em; }
+  .site-header .brand span { width: 7px; height: 7px; margin: 3px 0 0 5px; border-radius: 50%; background: var(--lime); }
+  .site-header nav { display: flex; align-items: center; gap: clamp(18px,2vw,31px); margin: 0 clamp(25px,4vw,70px) 0 auto; font-size: 14px; font-weight: 500; }
+  .site-header nav > a { color: rgba(255,255,255,.88); transition: color 180ms ease; }
+  .site-header nav > a:hover, .site-header nav > a[aria-current="page"] { color: #fff; }
+  .services-menu { position: relative; display: flex; height: 83px; align-items: center; font: inherit; }
+  .services-trigger { display: flex; align-items: center; gap: 5px; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; line-height: 1; white-space: nowrap; cursor: pointer; }
+  .services-trigger span { color: #d4ae68; font: 18px/1 var(--sans); transition: transform 180ms ease; }
+  .services-menu:hover .services-trigger span, .services-menu:focus-within .services-trigger span, .services-menu.is-open .services-trigger span { transform: rotate(45deg); }
+  .services-dropdown { position: absolute; top: 100%; right: -14px; width: 238px; padding: 9px 0; border: 1px solid rgba(255,255,255,.22); background: #090909; box-shadow: 0 19px 45px rgba(0,0,0,.5); opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(7px); transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease; }
+  .services-menu:hover .services-dropdown, .services-menu:focus-within .services-dropdown, .services-menu.is-open .services-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+  .services-dropdown a { display: block; padding: 11px 15px; color: rgba(255,255,255,.88); font-size: 13px; font-weight: 500; transition: color 160ms ease, background 160ms ease; }
+  .services-dropdown a:hover, .services-dropdown a[aria-current="page"] { background: #171715; color: #d4ae68; }
+  .header-cta { display: inline-flex; min-height: 40px; align-items: center; gap: 11px; padding: 0 19px; border-radius: 999px; background: #b89654; color: #171108; font-size: 14px; font-weight: 600; transition: background 180ms ease, transform 180ms ease; }
+  .header-cta:hover { transform: translateY(-1px); background: #d0ae6c; }
+  .header-cta i { display: grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; background: rgba(0,0,0,.32); color: #fff; font: normal 15px/1 Arial,sans-serif; }
+  .menu { display: none; }
+
+  .audio-service-page { min-height: 0; }
+  .about-hero { position: relative; display: grid; min-height: max(760px,100svh); place-items: center; overflow: hidden; isolation: isolate; padding: 150px 28px 100px; text-align: center; }
+  .hero-video, .hero-image, .hero-overlay { position: absolute; z-index: -1; inset: 0; }
+  .hero-video, .hero-image { width: 100%; height: 100%; object-fit: cover; transform: scale(1.015); }
+  .hero-image { background-position: center; background-size: cover; }
+  .hero-overlay { background: linear-gradient(180deg,rgba(9,9,9,.45) 0%,rgba(9,9,9,.38) 28%,rgba(9,9,9,.7) 57%,#090909 100%),linear-gradient(90deg,rgba(9,9,9,.36),rgba(9,9,9,.05) 50%,rgba(9,9,9,.36)); }
+  .hero-content { width: min(100%,1080px); margin: auto; padding-top: 28px; }
+  .eyebrow { display: flex; align-items: center; justify-content: center; gap: 11px; margin: 0 0 20px; color: #e2c891; font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; }
+  .eyebrow span { width: 24px; height: 1px; background: var(--lime); }
+  .audio-hero h1 { margin: 0 0 26px; color: var(--ink); font: 500 clamp(48px,6.3vw,82px)/1.04 var(--serif); letter-spacing: -.065em; }
+  .audio-hero h1 span { color: #e2c891; }
+  .hero-intro { max-width: 970px; margin: 0 auto; color: rgba(255,255,255,.88); font-size: clamp(16px,1.65vw,23px); line-height: 1.8; }
+  .hero-belief { max-width: 760px; margin: 36px auto 0; color: rgba(255,255,255,.82); font-size: clamp(17px,1.8vw,25px); line-height: 1.5; }
+  .hero-belief strong { color: #fff; font-weight: 600; }
+  .security-service-hero .hero-intro { max-width: 1080px; }
+  .security-service-hero .hero-belief { max-width: 600px; white-space: pre-line; }
+  .lighting-service-hero .hero-intro { max-width: 1080px; }
+  .lighting-service-hero .hero-belief { max-width: 600px; white-space: pre-line; }
+  .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 42px; }
+  .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 14px; padding: 0 20px; border: 1px solid transparent; border-radius: 999px; font-size: 13px; font-weight: 500; transition: background 180ms ease,border-color 180ms ease,color 180ms ease,transform 180ms ease; }
+  .button span { font-size: 16px; }
+  .button-secondary { border-color: rgba(255,255,255,.55); background: rgba(8,8,8,.2); color: #fff; }
+  .button-secondary:hover { border-color: var(--lime); color: #e2c891; }
+  .button-primary { background: var(--lime); color: #1b150a; }
+  .button-primary:hover { transform: translateY(-1px); background: #d4ae68; }
+  .hero-foot { position: absolute; right: clamp(22px,3.2vw,64px); bottom: 27px; left: clamp(22px,3.2vw,64px); display: flex; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.7); font-size: 10px; font-weight: 500; letter-spacing: .06em; }
+  .hero-foot a { color: rgba(255,255,255,.86); }
+  .hero-foot a span { margin-left: 8px; color: var(--lime); }
+  @media (max-width: 1200px) { .site-header nav { gap: 19px; margin-right: 24px; font-size: 12px; } .header-cta { min-height: 38px; padding: 0 14px; font-size: 12px; } }
+  @media (max-width: 900px) { .about-hero { min-height: max(700px,100svh); padding: 130px 30px 100px; } .hero-intro { max-width: 750px; } }
+  @media (max-width: 680px) {
+    .site-header { height: 74px; padding: 0 22px; }
+    .site-header .brand { font-size: 25px; }
+    .site-header nav { position: absolute; top: 74px; right: 16px; left: 16px; display: none; align-items: stretch; flex-direction: column; gap: 0; margin: 0; padding: 10px 20px; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; background: rgba(13,13,12,.97); backdrop-filter: blur(16px); }
+    .site-header nav.is-open { display: flex; }
+    .site-header nav > a { padding: 13px 0; font-size: 14px; }
+    .services-menu { width: 100%; height: auto; flex-direction: column; align-items: stretch; }
+    .services-trigger { width: 100%; justify-content: space-between; padding: 13px 0; font-size: 14px; }
+    .services-dropdown { position: static; display: none; width: 100%; padding: 0 0 8px 12px; border: 0; background: transparent; box-shadow: none; opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+    .services-menu:hover .services-dropdown, .services-menu:focus-within .services-dropdown, .services-menu.is-open .services-dropdown { display: block; }
+    .services-dropdown a { padding: 10px 8px; font-size: 13px; }
+    .header-cta { min-height: 36px; margin-left: auto; padding: 0 12px; font-size: 11px; }
+    .menu { display: flex; width: 40px; height: 40px; flex-direction: column; align-items: center; justify-content: center; gap: 6px; margin-left: 9px; border: 0; background: transparent; cursor: pointer; }
+    .menu span { display: block; width: 19px; height: 1px; background: #fff; }
+    .service-header { height: 72px; padding: 0 24px; } .back { font-size: 10px; } .service-standard { min-height: calc(100vh - 141px); padding: 16vh 26px; } .intro { font-size: 16px; } .service-footer { padding: 22px 24px; font-size: 9px; }
+    .about-hero { min-height: max(720px,100svh); padding: 120px 22px 110px; }
+    .hero-content { padding-top: 0; } .eyebrow { gap: 8px; margin-bottom: 16px; font-size: 9px; letter-spacing: .11em; } .eyebrow span { width: 16px; }
+    .audio-hero h1 { margin-bottom: 20px; font-size: clamp(43px,12vw,65px); } .hero-intro { font-size: 15px; line-height: 1.75; } .hero-belief { margin-top: 25px; font-size: 17px; }
+    .hero-actions { gap: 10px; margin-top: 30px; } .button { min-height: 44px; padding: 0 15px; font-size: 12px; } .hero-foot { bottom: 19px; gap: 12px; font-size: 8px; } .hero-foot > * { max-width: 47%; } .hero-foot a { text-align: right; }
+  }
+
+  .audio-planning { padding: clamp(86px,10vw,150px) clamp(22px,7.5vw,120px) clamp(100px,12vw,170px); background: #090909; color: var(--ink); }
+  .audio-planning-intro { max-width: 1050px; margin: 0 auto clamp(72px,10vw,150px); text-align: center; }
+  .audio-section-kicker { margin: 0 0 15px; color: #d4ae68; font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .audio-planning-intro h2 { margin: 0 0 20px; font: 500 clamp(34px,4.4vw,58px)/1.12 var(--serif); letter-spacing: -.055em; }
+  .audio-planning-intro > p:last-child { max-width: 980px; margin: 0 auto; color: rgba(244,241,234,.78); font-size: clamp(16px,1.5vw,21px); line-height: 1.7; }
+  .audio-planning-grid { display: grid; grid-template-columns: minmax(260px,.95fr) minmax(0,1.75fr); gap: clamp(32px,4vw,68px); max-width: 1600px; margin: 0 auto; align-items: stretch; }
+  .audio-sticky-column { position: sticky; top: 110px; align-self: start; }
+  .audio-sticky-copy { margin: 0 0 24px; }
+  .audio-sticky-copy h3 { max-width: 480px; margin: 0 0 18px; color: var(--ink); font: 500 clamp(30px,3.2vw,46px)/1.12 var(--serif); letter-spacing: -.05em; }
+  .audio-sticky-copy > p:last-child { max-width: 560px; margin: 0; color: rgba(244,241,234,.76); font-size: clamp(15px,1.3vw,18px); line-height: 1.7; }
+  .audio-feature-media { margin: 26px 0 0; }
+  .audio-feature-media video, .audio-feature-media img { display: block; width: 100%; aspect-ratio: 1.45; border-radius: 14px; background: #141414; object-fit: cover; }
+  .audio-feature-media figcaption { margin-top: 11px; color: rgba(244,241,234,.6); font-size: 11px; font-style: italic; line-height: 1.5; }
+  .audio-solution-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; align-content: start; }
+  .audio-solution-card { display: flex; min-width: 0; min-height: 620px; flex-direction: column; overflow: hidden; border-radius: 16px; background: #151515; }
+  .audio-solution-visual { position: relative; min-height: 0; flex: 1 1 auto; margin: 0; overflow: hidden; background: #191919; }
+  .audio-solution-visual::after { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent,rgba(0,0,0,.2)); content: ""; }
+  .audio-solution-visual img { display: block; width: 100%; height: 100%; min-height: 340px; object-fit: cover; transition: transform .7s cubic-bezier(.2,.72,.22,1); }
+  .audio-solution-card:hover .audio-solution-visual img { transform: scale(1.035); }
+  .audio-solution-visual span { position: absolute; z-index: 1; top: 24px; left: 24px; padding: 6px 14px; border: 1px solid rgba(255,255,255,.68); border-radius: 999px; background: rgba(10,10,10,.22); color: #f4f1ea; font-size: 12px; }
+  .audio-solution-copy { padding: 22px 24px 25px; }
+  .audio-solution-copy h3 { margin: 0 0 8px; color: var(--ink); font: 500 clamp(19px,1.65vw,24px)/1.3 var(--serif); letter-spacing: -.025em; }
+  .audio-solution-copy p { margin: 0; color: rgba(244,241,234,.7); font-size: 13px; line-height: 1.65; }
+  @media (max-width: 1000px) { .audio-planning-grid { grid-template-columns: minmax(230px,.8fr) minmax(0,1.2fr); gap: 28px; } .audio-solution-grid { gap: 14px; } .audio-solution-card { min-height: 530px; } .audio-solution-copy { padding: 19px; } }
+  @media (max-width: 760px) { .audio-planning { padding: 76px 22px 90px; } .audio-planning-intro { margin-bottom: 55px; } .audio-planning-grid { display: block; } .audio-sticky-column { position: static; margin-bottom: 36px; } .audio-feature-media video { aspect-ratio: 1.5; } .audio-solution-grid { grid-template-columns: 1fr; gap: 14px; } .audio-solution-card { min-height: 500px; } .audio-solution-visual img { min-height: 320px; } }
+
+
+  .about-closer {
+    position: relative;
+    display: grid;
+    min-height: max(760px, 100svh);
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 120px 28px;
+    text-align: center;
+  }
+
+  .closing-image,
+  .closing-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .closing-image {
+    background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90") center 54% / cover no-repeat;
+    transform: scale(1.02);
+  }
+
+  .closing-overlay {
+    background:
+      radial-gradient(ellipse at 24% 58%, rgba(98, 67, 24, 0.42), transparent 44%),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.54), rgba(5, 5, 5, 0.68) 55%, rgba(5, 5, 5, 0.76)),
+      linear-gradient(90deg, rgba(5, 5, 5, 0.38), rgba(5, 5, 5, 0.12) 50%, rgba(5, 5, 5, 0.38));
+  }
+
+  .closing-content {
+    width: min(100%, 1000px);
+    margin: auto;
+  }
+
+  .closing-content .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .closing-title {
+    max-width: 960px;
+    margin: 0 auto 25px;
+    font: 500 clamp(44px, 6vw, 82px)/1.08 var(--primary);
+    letter-spacing: -0.06em;
+  }
+
+  .closing-title em {
+    position: relative;
+    display: inline-block;
+    color: #e2c891;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .closing-title em::after {
+    position: absolute;
+    right: 0.02em;
+    bottom: -0.08em;
+    left: 0.02em;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    content: "";
+    transform: rotate(-2deg);
+  }
+
+  .closing-copy {
+    max-width: 840px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(15px, 1.35vw, 19px);
+    line-height: 1.75;
+  }
+
+  .closing-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 18px;
+    margin-top: 58px;
+    padding: 0 9px 0 22px;
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    border-radius: 999px;
+    background: rgba(7, 7, 7, 0.34);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+
+  .closing-cta span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #1b150a;
+    font-size: 15px;
+  }
+
+  .closing-cta:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent-hover);
+    background: rgba(7, 7, 7, 0.62);
+  }
+
+
+  .outdoor-audio { padding: clamp(84px,9vw,132px) clamp(22px,4.2vw,78px) clamp(96px,11vw,160px); background: #090909; color: var(--ink); }
+  .outdoor-audio-intro { max-width: 1120px; margin: 0 auto clamp(54px,7vw,92px); text-align: center; }
+  .outdoor-audio-intro h2 { margin: 0 0 18px; font: 500 clamp(36px,4.3vw,58px)/1.12 var(--serif); letter-spacing: -.055em; text-transform: capitalize; }
+  .outdoor-audio-intro > p:last-child { max-width: 1040px; margin: 0 auto; color: rgba(244,241,234,.78); font-size: clamp(16px,1.55vw,21px); line-height: 1.7; }
+  .outdoor-audio-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; max-width: 1700px; margin: 0 auto; align-items: stretch; }
+  .outdoor-audio-card { display: flex; min-width: 0; min-height: 570px; flex-direction: column; overflow: hidden; border-radius: 15px; background: #171717; }
+  .outdoor-audio-card-warm { background: #211e18; }
+  .outdoor-audio-card-earth { background: #1c1a16; }
+  .outdoor-card-visual { position: relative; min-height: 0; flex: 1 1 auto; margin: 0; overflow: hidden; background: #141414; }
+  .outdoor-card-visual::after { position: absolute; inset: 40% 0 0; background: linear-gradient(transparent,rgba(0,0,0,.28)); content: ""; }
+  .outdoor-card-visual img { display: block; width: 100%; height: 100%; min-height: 340px; object-fit: cover; transition: transform .7s cubic-bezier(.2,.72,.22,1); }
+  .outdoor-audio-card:hover .outdoor-card-visual img { transform: scale(1.035); }
+  .outdoor-card-visual span { position: absolute; z-index: 1; top: 22px; left: 22px; padding: 6px 13px; border: 1px solid rgba(255,255,255,.65); border-radius: 999px; background: rgba(9,9,9,.38); color: #f4f1ea; font-size: 11px; }
+  .outdoor-card-copy { padding: 21px 22px 24px; }
+  .outdoor-card-copy h3 { margin: 0 0 8px; font: 500 clamp(18px,1.5vw,22px)/1.3 var(--serif); letter-spacing: -.025em; }
+  .outdoor-card-copy p { margin: 0; color: rgba(244,241,234,.72); font-size: 12px; line-height: 1.65; }
+  .outdoor-audio-stories { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: 22px; max-width: 1600px; margin: clamp(28px,3vw,48px) auto 0; }
+  .outdoor-story { display: flex; min-width: 0; flex-direction: column; gap: 24px; padding: clamp(28px,4vw,54px); border-radius: 16px; background: #171717; }
+  .outdoor-story-video { background: linear-gradient(145deg,rgba(191,151,78,.2),rgba(191,151,78,.07) 55%,#171613); }
+  .outdoor-story-copy h3 { margin: 0 0 12px; font: 500 clamp(25px,2.5vw,36px)/1.18 var(--serif); letter-spacing: -.045em; }
+  .outdoor-story-copy > p:last-child { max-width: 760px; margin: 0; color: rgba(244,241,234,.82); font-size: clamp(14px,1.2vw,17px); line-height: 1.75; }
+  .outdoor-story-media { margin: 0; }
+  .outdoor-story-media img, .outdoor-story-media video { display: block; width: 100%; aspect-ratio: 1.8; border-radius: 12px; background: #111; object-fit: cover; }
+  .outdoor-story-image .outdoor-story-media img { aspect-ratio: 1.5; }
+  .outdoor-story-media figcaption { margin-top: 10px; color: rgba(244,241,234,.65); font-size: 10px; font-style: italic; }
+  @media (max-width: 1100px) { .outdoor-audio-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; } .outdoor-audio-card { min-height: 520px; } }
+  @media (max-width: 760px) { .about-closer { min-height: max(680px,100svh); padding: 100px 22px; } .closing-content .eyebrow { margin-bottom: 20px; } .closing-title { font-size: clamp(42px,11vw,62px); } .closing-copy { font-size: 15px; } .closing-cta { margin-top: 38px; } .outdoor-audio { padding: 76px 22px 90px; } .outdoor-audio-grid { grid-template-columns: 1fr; gap: 14px; } .outdoor-audio-card { min-height: 470px; } .outdoor-card-visual img { min-height: 300px; } .outdoor-audio-stories { grid-template-columns: 1fr; gap: 14px; } .outdoor-story { padding: 25px; gap: 20px; } .outdoor-story-media img, .outdoor-story-media video { aspect-ratio: 1.35; } }
+
+
+  footer.site-footer {
+    display: block;
+    padding: 0 clamp(24px, 8vw, 154px);
+    border-top: 1px solid rgba(244,241,234,.18);
+    background: #11120f;
+    color: var(--ink);
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(20px, 2vw, 36px);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: clamp(52px, 6vw, 84px) 0 56px;
+    align-items: start;
+  }
+
+  .footer-brand-column,
+  .footer-contact,
+  .footer-links {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+    margin: 0;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: flex-start;
+    color: var(--ink);
+    font: 500 42px/0.95 var(--primary);
+    letter-spacing: -0.09em;
+  }
+
+  .footer-logo span {
+    width: 7px;
+    height: 7px;
+    margin: 2px 0 0 5px;
+    border-radius: 50%;
+    background: var(--lime);
+  }
+
+  .footer-brand-line {
+    max-width: 290px;
+    margin: 23px 0 0;
+    color: var(--muted);
+    font: 400 14px/1.65 var(--sans);
+  }
+
+  .footer-links {
+    gap: 13px;
+  }
+
+  .footer-links h2,
+  .footer-contact h2 {
+    margin: 2px 0 9px;
+    color: var(--lime);
+    font: 500 10px/1.4 var(--sans);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer-links a,
+  .footer-areas > span {
+    color: var(--muted);
+    font: 400 13px/1.5 var(--sans);
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover,
+  .footer-contact a:hover,
+  .footer-bottom a:hover {
+    color: var(#d4ae68);
+  }
+
+  .footer-contact {
+    gap: 8px;
+  }
+
+  .footer-contact h2 {
+    margin-bottom: 8px;
+  }
+
+  .footer-location-label {
+    margin: 0;
+    color: var(--muted);
+    font: 500 10px/1.5 var(--sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .footer-contact address {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--ink);
+    font: normal 14px/1.55 var(--sans);
+  }
+
+  .footer-phone,
+  .footer-directions {
+    color: var(--ink);
+    font: 400 13px/1.5 var(--sans);
+    transition: color 0.2s ease;
+  }
+
+  .footer-phone {
+    margin-top: 2px;
+  }
+
+  .footer-directions {
+    margin-top: 10px;
+    color: var(--muted);
+  }
+
+  .footer-directions span {
+    margin-left: 5px;
+    color: var(--lime);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 62px;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(244,241,234,.18);
+  }
+
+  .footer-bottom p,
+  .footer-bottom a {
+    margin: 0;
+    color: rgba(184, 179, 168, 0.72);
+    font: 400 10px/1.5 var(--sans);
+  }
+
+  .footer-bottom a span {
+    margin-left: 7px;
+    color: var(--lime);
+    font: 14px/1 Arial, sans-serif;
+  }
+
+  @media (max-width: 1200px) {
+    .footer-main {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px 30px;
+    }
+
+    .footer-brand-column {
+      grid-row: span 2;
+    }
+  }
+
+  @media (max-width: 760px) {
+    footer.site-footer {
+      padding: 0 26px;
+    }
+
+    .footer-main {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px 24px;
+      padding: 48px 0 40px;
+    }
+
+    .footer-brand-column {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      max-width: 430px;
+    }
+
+    .footer-contact {
+      grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+      min-height: 0;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 17px 0;
+    }
+
+    .footer-bottom p:last-child {
+      width: 100%;
+      order: 3;
+    }
+  }
+
+  @media (max-width: 420px) {
+    footer.site-footer {
+      padding: 0 20px;
+    }
+
+    .footer-main {
+      gap: 32px 18px;
+    }
+
+    .footer-logo {
+      font-size: 38px;
+    }
+
+    .footer-links a,
+    .footer-areas > span {
+      font-size: 12px;
+    }
+  }
+
+</style>
